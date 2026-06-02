@@ -39,8 +39,8 @@ from telegram.ext import (
 )
 
 # ─── الإعدادات ───────────────────────────────────────────────
-BOT_TOKEN = "ضع_توكن_البوت_هنا"          # من @BotFather
-ADMIN_ID   = 123456789                    # يوزر ID الأدمن (اختياري)
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")   # من Railway Variables
+ADMIN_ID  = int(os.environ.get("ADMIN_ID", "0"))  # يوزر ID الأدمن (اختياري)
 
 # نطاقات الإيميل المتاحة
 DOMAINS = [
@@ -551,3 +551,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
